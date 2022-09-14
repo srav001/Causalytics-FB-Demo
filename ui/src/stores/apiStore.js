@@ -15,7 +15,6 @@ export const useAPIstore = defineStore({
 				fetch('http://localhost:3000/')
 					.then(response => response.json())
 					.then(result => {
-						console.log(result)
 						this.fbData = result;
 						resolve(result);
 					});

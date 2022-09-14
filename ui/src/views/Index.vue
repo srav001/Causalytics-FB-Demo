@@ -10,7 +10,7 @@ const FBdata = ref({});
 onMounted(async () => {
 	FBdata.value = await apiStore.fetchFBdata();
 
-	console.log({ ...FBdata });
+	console.log({ ...FBdata.value });
 });
 </script>
 
