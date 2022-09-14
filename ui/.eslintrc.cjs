@@ -1,11 +1,18 @@
-/* eslint-env node */
-require("@rushstack/eslint-patch/modern-module-resolution");
-
 module.exports = {
-  "root": true,
-  "extends": [
-    "plugin:vue/essential",
-    "eslint:recommended",
-    "@vue/eslint-config-prettier"
-  ]
-}
+	env: {
+		node: true,
+		es2021: true
+	},
+	extends: ['eslint:recommended', 'plugin:vue/recommended', '@vue/airbnb', 'prettier'],
+	rules: {
+		'no-console': process.env.NODE_ENV === 'production' ? 'off' : 'warn',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'off' : 'warn',
+		'vue/no-deprecated-slot-attribute': 'off',
+		'vue/multi-word-component-names': [
+			'error',
+			{
+				ignores: ['Index', 'Home', 'About']
+			}
+		]
+	}
+};
