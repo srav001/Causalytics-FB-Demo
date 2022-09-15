@@ -11,12 +11,19 @@ export const useAPIstore = defineStore({
 	},
 	actions: {
 		fetchFBdata() {
-			return new Promise(resolve => {
+			return new Promise((resolve, reject) => {
 				fetch('http://localhost:3000/')
-					.then(response => response.json())
-					.then(result => {
+					.then(response => {
+						if (response.status === 500) throw new Error('server_error');
+						return response.json();
+					})
+					.then(response => {
+						const result = response.json();
 						this.fbData = result;
 						resolve(result);
+					})
+					.catch(err => {
+						reject(err);
 					});
 			});
 		}
