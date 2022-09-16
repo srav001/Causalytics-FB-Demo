@@ -17,8 +17,7 @@ export const useAPIstore = defineStore({
 						if (response.status === 500) throw new Error('server_error');
 						return response.json();
 					})
-					.then(response => {
-						const result = response.json();
+					.then(result => {
 						this.fbData = result;
 						resolve(result);
 					})
