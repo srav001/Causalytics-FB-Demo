@@ -36,8 +36,8 @@ onMounted(async () => {
 
 <template>
 	<div>
-		<h1 class="text-center mx-auto my-2">Causylatics Assignment</h1>
-		<v-card :loading="apiState.loaded" :class="['text-center', { 'pa-5': apiState.error }]" max-width="800" outlined>
+		<h1 class="text-center mx-auto my-2">Causylatics Demo</h1>
+		<v-card :loading="apiState.loaded" :class="['text-center', { 'pa-5': apiState.error }]" max-width="1080" outlined>
 			<template slot="progress">
 				<v-progress-circular class="my-2" color="deep-purple" height="10" indeterminate></v-progress-circular>
 			</template>
