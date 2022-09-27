@@ -12,7 +12,7 @@ Chart.register(Tooltip, Legend, BarElement, BarController, CategoryScale, Linear
 // const randomColor = () => Math.floor(Math.random() * 16777215).toString(16);
 
 export default {
-	name: 'BarChar',
+	name: 'BarChart',
 	props: {
 		chartId: {
 			type: String,
